@@ -41,16 +41,16 @@ public class DeDup {
     }
     
     // method to remove the duplicate elements from the integer array using lambda
-    private Collection<Integer> removeDupInIntArrayUsingLambda(int[] ints){
-    	List<Integer> intArrayList = IntStream.of(ints).boxed().collect(Collectors.toList());
+    private Collection<Integer> removeDupInIntArrayUsingLambda(){
+    	List<Integer> intArrayList = IntStream.of(randomIntegers).boxed().collect(Collectors.toList());
         return selectDistinct(intArrayList);
     }
     
     // method to remove the duplicate elements from the integer array using LinkedHashSet to preserve the order
-    private Set<Integer> removeDupInIntArray(int[] ints){
+    private Set<Integer> removeDupInIntArray(){
         Set<Integer> setString = new LinkedHashSet<Integer>();
-        for(int i=0;i<ints.length;i++){
-            setString.add(ints[i]);
+        for(int i=0;i<randomIntegers.length;i++){
+            setString.add(randomIntegers[i]);
         }
         return setString;
     }
@@ -79,12 +79,12 @@ public class DeDup {
     
     // Implementation solution method 2
     public void implSolution2() {
-    	displayIntArray(convertCollectionIntegerToIntArray(removeDupInIntArrayUsingLambda(randomIntegers)));
+    	displayIntArray(convertCollectionIntegerToIntArray(removeDupInIntArrayUsingLambda()));
     }
     
     // Implementation solution method 3
     public void implSolution3() {
-    	displayIntArray(convertCollectionIntegerToIntArray(removeDupInIntArray(randomIntegers)));
+    	displayIntArray(convertCollectionIntegerToIntArray(removeDupInIntArray()));
     }
     
     public static void main(String [] args) {
